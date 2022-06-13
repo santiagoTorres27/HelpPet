@@ -1,0 +1,120 @@
+.card {
+  margin-bottom: 8px;
+}
+
+.pet-card {
+  padding: 16px;
+
+  .pet {
+    display: flex;
+    gap: 16px;
+
+    .pet-card-img {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 8px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .pet-card-info {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h2 {
+        text-align: left;
+      }
+
+      .items {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          height: 70px;
+          width: 28%;
+          border-radius: 8px;
+          background-color: #fff4e5;
+          border: 1px solid #f2b84b;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #f2b84b;
+
+          p {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .message-input {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 0px 16px;
+      font-family: inherit;
+    }
+  }
+}
+
+.pet-comments {
+  width: 800px;
+  margin: 32px auto;
+}
+
+.img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .pet-comments {
+    width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .pet-card {
+    .pet {
+      .pet-card-info {
+        .items {
+          display: flex;
+
+          div {
+            width: 48%;
+            padding: 4px;
+          }
+
+          .kind {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

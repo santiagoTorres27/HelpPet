@@ -1,0 +1,32 @@
+<div class="toolbar">
+  <div class="toolbar-container">
+    <div>
+      <a mat-stroked-button color="primary" routerLink="/pets/add">
+        ¡Quiero dar una mascota en adopción!
+      </a>
+    </div>
+
+    <div class="filters">
+      <mat-form-field appearance="outline">
+        <mat-label>Ordenar por:</mat-label>
+        <mat-select [(ngModel)]="sortByFilter" (selectionChange)="onSort()">
+          <mat-option value="latest">Más recientes</mat-option>
+          <mat-option value="oldest">Más antigüos</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Filtrar por tipo</mat-label>
+        <mat-select [(ngModel)]="kindFilter" (selectionChange)="onKind()">
+          <mat-option value="all">Todos</mat-option>
+          <mat-option value="dog">Perros</mat-option>
+          <mat-option value="cat">Gatos</mat-option>
+          <mat-option value="bird">Aves</mat-option>
+          <mat-option value="other">Otros</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+</div>

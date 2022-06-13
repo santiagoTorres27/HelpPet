@@ -1,0 +1,45 @@
+<div class="card" *ngIf="user">
+  <div class="card-banner">
+    <!-- Profile pic -->
+    <div class="profile-pic">
+      <div class="img">
+        <img [src]="user.imgUrl" alt="" />
+      </div>
+    </div>
+
+    <!-- Edit button -->
+    <button
+      mat-raised-button
+      class="btn-edit"
+      (click)="mattabInfo()"
+      *ngIf="onMyProfile"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+
+  <div class="card-content">
+    <h2>{{ user.name }} {{ user.lastname }}</h2>
+    <div>
+      <div class="info-item">
+        <p>{{ user.location }}</p>
+        <mat-icon>pin_drop</mat-icon>
+      </div>
+
+      <div class="info-item">
+        <p>{{ user.email }}</p>
+        <mat-icon>mail</mat-icon>
+      </div>
+
+      <div class="info-item">
+        <p>{{ user.phone }}</p>
+        <mat-icon>phone</mat-icon>
+      </div>
+    </div>
+
+    <div class="about-me">
+      <span>Sobre mí</span>
+      <p>{{ user.aboutMe }}</p>
+    </div>
+  </div>
+</div>

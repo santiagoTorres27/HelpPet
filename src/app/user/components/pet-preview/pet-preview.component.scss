@@ -1,0 +1,132 @@
+.card {
+  width: 800px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0px;
+  gap: 24px;
+  box-shadow: none;
+
+  .img {
+    overflow: hidden;
+    height: 420px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 2em;
+    }
+
+    span {
+      color: rgb(173, 173, 173);
+      margin-bottom: 8px;
+      font-size: 0.9em;
+    }
+
+    .info-items {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        border-radius: 8px;
+
+        img {
+          width: 40%;
+          margin: 8px 0px;
+        }
+
+        span {
+          margin-top: 8px;
+          color: black;
+        }
+      }
+
+      .item-age {
+        background-color: #fff4e5;
+        border: 1px solid #f2b84b;
+      }
+
+      .item-kind {
+        background-color: #f8fdf5;
+        border: 1px solid #95b18c;
+      }
+
+      .item-location {
+        background-color: #f2f7fa;
+        border: 1px solid #9cb8c9;
+      }
+    }
+
+    .info-footer {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+// Media queries
+@media (max-width: 1040px) {
+  .card {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .img {
+      overflow: hidden;
+      height: 180px;
+      width: 180px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .info {
+      h2 {
+        text-align: center;
+      }
+
+      .info-items {
+        width: 100%;
+      }
+
+      .info-footer {
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 90%;
+    .info {
+      .info-items {
+        width: 100%;
+      }
+
+      .info-footer {
+        margin-top: 24px;
+      }
+    }
+  }
+}

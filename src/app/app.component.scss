@@ -1,0 +1,17 @@
+mat-sidenav-container {
+  min-height: 100vh;
+
+  mat-sidenav {
+    width: 280px;
+
+    mat-nav-list {
+      mat-icon {
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

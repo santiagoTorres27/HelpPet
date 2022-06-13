@@ -1,0 +1,15 @@
+.profile-container {
+  width: 800px;
+  min-height: 80vh;
+  margin: 16px auto;
+
+  .users-pets {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    width: 90%;
+  }
+}

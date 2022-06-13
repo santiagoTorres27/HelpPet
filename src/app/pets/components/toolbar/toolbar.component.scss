@@ -1,0 +1,35 @@
+.toolbar {
+  width: 90%;
+  margin: 16px auto;
+
+  .toolbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+mat-form-field {
+  margin: 0px 8px;
+}
+
+@media (max-width: 768px) {
+  .toolbar-container {
+    flex-direction: column-reverse;
+  }
+
+  mat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .filters {
+    display: flex;
+  }
+
+  .mat-form-field {
+    width: 140px;
+  }
+}

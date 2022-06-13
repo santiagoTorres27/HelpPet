@@ -1,0 +1,58 @@
+img {
+  width: 90%;
+}
+
+.container {
+  min-height: 80vh;
+
+  .signup-img {
+    animation: img-anim 0.8s ease;
+  }
+
+  .signup-form {
+    animation: form-anim 0.8s ease;
+  }
+
+  .signup-icon {
+    display: none;
+  }
+}
+
+a {
+  margin-bottom: 16px;
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .signup-img {
+      display: none;
+    }
+
+    .signup-icon {
+      width: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+// Animations
+@keyframes form-anim {
+  0% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+@keyframes img-anim {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+}

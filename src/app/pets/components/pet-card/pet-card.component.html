@@ -1,0 +1,18 @@
+<div class="pet-card" (click)="goPetDetail()">
+  <div class="image">
+    <img [src]="pet.photoUrl" alt="" />
+  </div>
+  <h2>{{ pet.name }}</h2>
+
+  <div class="info">
+    <div>
+      <mat-icon>pin_drop</mat-icon>
+      <p>{{ pet.location }}</p>
+    </div>
+
+    <div>
+      <mat-icon>wb_sunny</mat-icon>
+      <p>{{ pet.age }} años</p>
+    </div>
+  </div>
+</div>

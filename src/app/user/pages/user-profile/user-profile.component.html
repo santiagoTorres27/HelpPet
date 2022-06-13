@@ -1,0 +1,9 @@
+<div class="profile-container">
+  <!-- User profile card -->
+  <app-user-profile-card [user]="user"></app-user-profile-card>
+
+  <!-- User pets -->
+  <div class="users-pets">
+    <app-user-pet *ngFor="let pet of pets" [pet]="pet"></app-user-pet>
+  </div>
+</div>

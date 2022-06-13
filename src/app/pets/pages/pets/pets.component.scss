@@ -1,0 +1,16 @@
+.pets-container {
+  width: 90%;
+  margin: 32px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 16px;
+}
+
+.spinner-container {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

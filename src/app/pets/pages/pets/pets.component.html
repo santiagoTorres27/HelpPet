@@ -1,0 +1,14 @@
+<app-toolbar
+  (onKindEmitted)="getKindFilter($event)"
+  (onSortByEmitted)="getSortByFilter($event)"
+></app-toolbar>
+
+<!-- Spinner -->
+<div class="spinner-container" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+
+<!-- Pets container -->
+<div class="pets-container" *ngIf="!isLoading">
+  <app-pet-card *ngFor="let pet of pets" [pet]="pet"></app-pet-card>
+</div>

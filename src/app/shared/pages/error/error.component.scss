@@ -1,0 +1,141 @@
+.container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container {
+  width: 560px;
+  height: 550px;
+  margin: 32px auto;
+  position: relative;
+
+  .info {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px 32px;
+    z-index: 200;
+
+    a {
+      text-decoration: none;
+      color: #aaa;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #0582c1;
+    }
+  }
+
+  .error-bg {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 3;
+    animation: error-bg-anim 0.8s ease;
+  }
+
+  .error-cartel {
+    position: absolute;
+    z-index: 50;
+    top: 0%;
+    left: 150px;
+    width: 240px;
+    animation: error-cartel-anim 0.8s ease forwards,
+      anim-404 1s ease alternate-reverse infinite;
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+
+  .error-person {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    z-index: 100;
+    width: 120px;
+    animation: error-bg-person 0.8s ease forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .error-container {
+    width: 80%;
+    height: 400px;
+
+    .info {
+      width: 100%;
+    }
+
+    .error-cartel {
+      right: -40%;
+      width: 200px;
+    }
+
+    .error-person {
+      width: 90px;
+      left: 35px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .error-container {
+    position: relative;
+
+    .error-cartel {
+      width: 180px;
+    }
+  }
+}
+
+// Animations
+@keyframes anim-404 {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes error-cartel-anim {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes error-bg-anim {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes error-bg-person {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

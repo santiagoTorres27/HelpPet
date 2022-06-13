@@ -1,0 +1,105 @@
+.container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-403 {
+  width: 460px;
+  margin: 32px auto;
+  position: relative;
+  animation: anim-403 1s ease alternate infinite;
+
+  .person {
+    width: 100%;
+    animation: anim-person 1s ease forwards;
+    opacity: 0;
+  }
+
+  .icons {
+    position: absolute;
+    width: 300px;
+    top: 60px;
+    right: 0;
+    animation: anim-icons 1s ease forwards;
+    opacity: 0;
+  }
+}
+
+.info {
+  width: 100%;
+  opacity: 0;
+  animation: anim-info 0.4s ease forwards;
+  animation-delay: 1s;
+
+  p {
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  a {
+    color: rgb(116, 114, 114);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: orange;
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .container-403 {
+    width: 70%;
+    margin-bottom: 8px;
+
+    .icons {
+      top: 30px;
+      width: 50%;
+    }
+  }
+
+  .info {
+    width: 70%;
+  }
+}
+
+// Animations
+@keyframes anim-info {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-403 {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes anim-person {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-icons {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

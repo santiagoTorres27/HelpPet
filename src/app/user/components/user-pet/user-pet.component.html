@@ -1,0 +1,56 @@
+<div class="card">
+  <!-- Pet img -->
+  <div class="img">
+    <img [src]="pet.photoUrl" alt="" />
+  </div>
+
+  <!-- Pet info -->
+  <div class="info">
+    <h2>{{ pet.name }}</h2>
+    <div class="items">
+      <div>
+        <mat-icon>pin_drop</mat-icon>
+        <p>{{ pet.location }}</p>
+      </div>
+
+      <div>
+        <mat-icon>wb_sunny</mat-icon>
+        <p>{{ pet.age }} años</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pet buttons -->
+  <div class="buttons" *ngIf="onMyPet">
+    <!-- Delete pet -->
+    <button
+      mat-stroked-button
+      color="warn"
+      (click)="deletePet()"
+      matTooltip="Eliminar mascota"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+
+    <!-- Update pet -->
+    <button
+      mat-stroked-button
+      (click)="userPetEdit()"
+      class="editPet"
+      matTooltip="Actualizar mascota"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <!-- Show preview -->
+    <button
+      mat-stroked-button
+      color="primary"
+      class="editPet"
+      (click)="showPetPreview()"
+      matTooltip="Ver mi mascota"
+    >
+      <mat-icon>visibility</mat-icon>
+    </button>
+  </div>
+</div>

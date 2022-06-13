@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin: 0px 8px;
+}
+
+mat-toolbar {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  background-color: whitesmoke;
+}
+
+// Media queries
+@media (max-width: 576px) {
+  .buttons-session-active {
+    .home-btn,
+    .profile-btn {
+      display: none;
+    }
+  }
+
+  .buttons-session-inactive {
+    .signup {
+      display: none;
+    }
+  }
+}

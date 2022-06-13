@@ -1,0 +1,57 @@
+<!-- Spinner -->
+
+<div class="pet-detail-container">
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div class="card" *ngIf="!isLoading">
+    <!-- Pet image -->
+    <div class="img">
+      <img [src]="pet.photoUrl" alt="" />
+    </div>
+
+    <!-- Pet info -->
+    <div class="info">
+      <div class="info-header">
+        <h2>{{ pet.name }}</h2>
+
+        <span>Descripción</span>
+        <p>{{ pet.description }}</p>
+
+        <span>Fecha de publicación</span>
+        <p>{{ pet.postDate | date: "medium" }}</p>
+      </div>
+
+      <div class="info-items">
+        <div class="item-age">
+          <img src="assets/icons/age.png" alt="" />
+          <p>{{ pet.age }} {{ pet.age | i18nPlural: ageMap }}</p>
+        </div>
+
+        <div class="item-kind">
+          <img [src]="pet.kind | pipeImg" alt="" />
+          <p>{{ pet.kind | pipeKind }}</p>
+        </div>
+
+        <div class="item-location">
+          <img src="assets/icons/location.png" alt="" />
+          <p>{{ pet.location }}</p>
+        </div>
+      </div>
+
+      <div class="info-footer">
+        <button
+          mat-stroked-button
+          color="primary"
+          [routerLink]="['/user', pet.ownerId]"
+        >
+          Contactar con el dueño
+        </button>
+        <button mat-icon-button color="primary" (click)="addComment()">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

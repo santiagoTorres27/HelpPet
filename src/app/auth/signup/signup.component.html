@@ -1,0 +1,70 @@
+<div class="container">
+  <!-- Signup img -->
+  <div class="signup-img">
+    <img src="../../../assets/signup.png" alt="" />
+  </div>
+
+  <div class="signup-icon">
+    <img src="assets/signup-icon.png" alt="" />
+  </div>
+
+  <!-- Signup form -->
+  <div class="signup-form">
+    <div class="card">
+      <h2>Crea tu cuenta</h2>
+
+      <!-- Submit form -->
+      <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+        <!-- nombre -->
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="name" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error>El nombre es obligatorio</mat-error>
+        </mat-form-field>
+
+        <!-- lastname -->
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Apellidos</mat-label>
+          <input matInput type="text" formControlName="lastname" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error>El apellido es obligatorio</mat-error>
+        </mat-form-field>
+
+        <!-- email -->
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput type="email" formControlName="email" />
+          <mat-error>{{ emailErrorMsg }}</mat-error>
+          <mat-icon matSuffix>mail</mat-icon>
+        </mat-form-field>
+
+        <!-- Password -->
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-error>{{ passwordErrorMsg }}</mat-error>
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+
+        <!-- Password Confirm -->
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Confirma tu contraseña</mat-label>
+          <input matInput type="password" formControlName="password2" />
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-error>Las contraseñas no coinciden</mat-error>
+        </mat-form-field>
+
+        <!-- Go to signup -->
+        <a routerLink="/auth/login" class="link"
+          >¿Ya tienes una cuenta? Clic aquí para iniciar sesión</a
+        >
+
+        <!-- Submit form -->
+        <button mat-flat-button color="primary" class="my-3" type="submit">
+          Crear cuenta
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

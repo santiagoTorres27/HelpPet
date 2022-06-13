@@ -1,0 +1,55 @@
+<div class="pet-comments">
+  <!-- Pet Card -->
+  <div class="card pet-card" *ngIf="pet">
+    <div class="pet">
+      <div class="pet-card-img">
+        <img [src]="pet.photoUrl" alt="" />
+      </div>
+
+      <div class="pet-card-info">
+        <h2>{{ pet.name }}</h2>
+        <div class="items">
+          <div>
+            Edad
+            <p>{{ pet.age }}</p>
+          </div>
+
+          <div class="kind">
+            Tipo
+            <p>{{ pet.kind | pipeKind }}</p>
+          </div>
+
+          <div>
+            Ubicación
+            <p>{{ pet.location }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comment form -->
+    <form class="message-input" [formGroup]="commentForm">
+      <input
+        type="text"
+        formControlName="comment"
+        placeholder="Escribe un comentario..."
+      />
+      <button
+        mat-mini-fab
+        color="primary"
+        (click)="sendComment()"
+        [disabled]="commentForm.invalid"
+      >
+        <mat-icon>send</mat-icon>
+      </button>
+    </form>
+  </div>
+
+  <!-- List of comments -->
+  <div class="comments">
+    <app-comment
+      *ngFor="let comment of comments"
+      [comment]="comment"
+    ></app-comment>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="profile-container">
+  <mat-tab-group #tabs>
+    <mat-tab label="Mi Perfil">
+      <!-- My Profile -->
+      <div class="tab">
+        <div class="user-card">
+          <app-user-profile-card
+            [user]="myProfile"
+            (onEditProfile)="mattabInfo($event)"
+            [onMyProfile]="true"
+          ></app-user-profile-card>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Mis Mascotas">
+      <!-- My Pets -->
+      <div class="tab">
+        <div class="pets-list" *ngIf="myPets">
+          <app-user-pet
+            *ngFor="let pet of myPets"
+            [pet]="pet"
+            (editPet)="getPetId($event)"
+            (onDeletePet)="deletePet($event)"
+            (onShowPet)="showPetPreview($event)"
+            [onMyPet]="true"
+          ></app-user-pet>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

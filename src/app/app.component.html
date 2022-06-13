@@ -1,0 +1,72 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="over">
+    <!-- Sidenav toolbar -->
+    <mat-toolbar>
+      <span>Menu</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <!-- Sidenav list User logged in-->
+    <mat-nav-list *ngIf="isLogin">
+      <a routerLink="/" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span>Ir a inicio</span></a
+      >
+
+      <a routerLink="/pets" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Listado de mascotas</span></a
+      >
+
+      <a routerLink="/pets/add" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>add</mat-icon>
+        <span>Agregar una mascota</span></a
+      >
+
+      <a routerLink="/profile" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <span>Ir a mi perfil</span></a
+      >
+
+      <mat-divider></mat-divider>
+
+      <a routerLink="/pets/add" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>logout</mat-icon>
+        <span>Cerrar sesión</span></a
+      >
+    </mat-nav-list>
+
+    <!-- Sidenav list User logged out -->
+    <mat-nav-list *ngIf="!isLogin">
+      <a routerLink="/" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span>Ir a inicio</span></a
+      >
+
+      <a routerLink="/pets" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>label</mat-icon>
+        <span>Listado de mascotas</span></a
+      >
+
+      <mat-divider></mat-divider>
+
+      <a routerLink="/auth/login" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>login</mat-icon>
+        <span>Iniciar sesión</span></a
+      >
+
+      <a routerLink="/auth/signup" mat-list-item (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>signup</mat-icon>
+        <span>Crear cuenta</span></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <app-toolbar (onOpenSidenav)="sidenav.toggle()"></app-toolbar>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

@@ -1,0 +1,96 @@
+<div class="add-container">
+  <div class="card">
+    <h2>¡Agregar una mascota!</h2>
+
+    <div class="update-profile">
+      <!-- User Image -->
+      <div class="user-image">
+        <div class="user-image-pic">
+          <div class="img">
+            <img [src]="imageUrl" alt="" />
+          </div>
+          <input
+            type="file"
+            id="file"
+            accept="image/*"
+            (change)="showPreview($event)"
+          />
+          <label for="file"><mat-icon>add_a_photo</mat-icon> </label>
+        </div>
+      </div>
+
+      <!-- User form -->
+      <div class="user-form">
+        <form [formGroup]="addPetForm" (ngSubmit)="submitForm()">
+          <!-- email -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="email" formControlName="name" />
+            <mat-error>El nombre es obligatorio</mat-error>
+          </mat-form-field>
+
+          <!-- Description -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+            <mat-error>La descripción es obligatoria</mat-error>
+          </mat-form-field>
+
+          <div class="grid">
+            <!-- Kind -->
+            <div class="col-6">
+              <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="kind">
+                  <mat-option *ngFor="let kind of animalKind" [value]="kind">
+                    {{ kind | titlecase }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Debes seleccionar un tipo</mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Age -->
+            <div class="col-6">
+              <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Edad</mat-label>
+                <input matInput type="number" formControlName="age" />
+                <mat-error>La edad es obligatoria</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Ubicación</mat-label>
+            <input matInput type="text" formControlName="location" />
+            <mat-error>La ubicación os obligatoria</mat-error>
+          </mat-form-field>
+
+          <!-- Submit form -->
+          <div class="buttons">
+            <!-- Cancel -->
+            <button
+              mat-stroked-button
+              color="primary"
+              type="button"
+              (click)="cancel()"
+            >
+              Cancelar
+            </button>
+
+            <!-- Submit -->
+            <button
+              mat-flat-button
+              color="primary"
+              (click)="submitForm()"
+              type="submit"
+            >
+              Aceptar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
